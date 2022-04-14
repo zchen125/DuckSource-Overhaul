@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>  
+    <title>DuckSource</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <!-- CSS --- importing bootstrap --->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">''
+
+    <style>
+        .page-item:not(:first-child) .page-link {
+        margin-left: -1px;
+        }
+        .page-item.active .page-link {
+        z-index: 3;
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        }
+        .page-item.disabled .page-link {
+        color: #6c757d;
+        pointer-events: none;
+        background-color: #fff;
+        border-color: #dee2e6;
+        }
+
+        .page-link {
+        padding: 0.375rem 0.75rem;
+        }
+
+        .page-item:first-child .page-link {
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+        }
+        .page-item:last-child .page-link {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+        }
+
+        .pagination-lg .page-link {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.25rem;
+        }
+        .pagination-lg .page-item:first-child .page-link {
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        }
+        .pagination-lg .page-item:last-child .page-link {
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+        }
+
+        .pagination-sm .page-link {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        }
+        .pagination-sm .page-item:first-child .page-link {
+        border-top-left-radius: 0.2rem;
+        border-bottom-left-radius: 0.2rem;
+        }
+        .pagination-sm .page-item:last-child .page-link {
+        border-top-right-radius: 0.2rem;
+        border-bottom-right-radius: 0.2rem;
+        }
+    </style>
+
+  <!-- JS --- importing bootstrap --->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        function changeTab(evt, pageName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(pageName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }    
+    </script>
+  </head>
+  <body onload="changeTab(event, 'Home');"><!--------------------------------------------------------------------------------------------------START OF NAV MENU --------->
+    <div class="fixed-top">
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+       <div><span class="navbar-toggler-icon"></span>
+        <span class="fs-4" style="color: #9acd32;">DuckSource</span></div>
+      </button>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent" align="left" style="position: absolute; z-index: 2;">
+          <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <span class="fs-6"><i>A free resource for studying</i></span>
+            </a>
+            <hr>
+          <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-toggle="collapse" data-target="#home-collapse" aria-expanded="false">
+                <span class="link-light rounded">Home</span>
+              </button>
+              <div class="collapse show" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="../Home/home.html" class="link-light rounded">Home</a></li>
+                  <li><a href="../Home/about.html" class="link-light rounded">About</a></li>
+                  <li><a href="../Home/default.html" class="link-light rounded">Contact Us</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-toggle="collapse" data-target="#courses-collapse" aria-expanded="false">
+                <span class="link-light rounded">Courses</span>
+              </button>
+              <div class="collapse" id="courses-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="../Courses/overview.html" class="link-light rounded">Overview</a></li>
+                  <li><a href="../Courses/math.html" class="link-light rounded">Math</a></li>
+                  <li><a href="../Courses/science.html" class="link-light rounded">Science</a></li>
+                  <li><a href="../Courses/engineering.html" class="link-light rounded">Engineering</a></li>
+                  <li><a href="../Courses/humanities.html" class="link-light rounded">Humanities</a></li>
+                  <li><a href="../Courses/business.html" class="link-light rounded">Business</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-1">
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-toggle="collapse" data-target="#resources-collapse" aria-expanded="false">
+                <span class="link-light rounded">Resources</span>
+              </button>
+              <div class="collapse" id="resources-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="../Resources/studying.html" class="link-light rounded">Studying</a></li>
+                  <li><a href="../Resources/exam.html" class="link-light rounded">Exam</a></li>
+                  <li><a href="../Resources/homework.html" class="link-light rounded">Homework</a></li>
+                  <li><a href="../Resources/collaboration.html" class="link-light rounded">Collaboration</a></li>
+                  <li><a href="../Resources/jobs.html" class="link-light rounded">Internship & Jobs</a></li>
+                  <li><a href="../Resources/college.html" class="link-light rounded">College</a></li>
+                  <li><a href="../Resources/softwaretools.html" class="link-light rounded">Software Tools</a></li>
+                  <li><a href="../Resources/youtube.html" class="link-light rounded">Youtube Videos & Podcasts</a></li>
+                  <li><a href="../Resources/research.html" class="link-light rounded">Research</a></li>
+                  <li><a href="../Resources/writing.html" class="link-light rounded">Writing</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <!-------------- Account Dropdown 2 -------------------->
+            <hr>
+            <div class="dropdown">
+              <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong class="user content"><p id= "info"></p></strong>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-light text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="../User/mycourses.html">My Courses</a></li>
+                <li><a class="dropdown-item" href="../User/profile.html">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" id="logout" href="../Home/home.html">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!--------------------------------------------------------------------------------------------------END OF NAV MENU ----------------------------->
+        
+        <div style="position: relative; z-index: 1;">
+          
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-indicators">
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" style="overflow:hidden">
+                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+                <img src="https://www.herzing.edu/sites/default/files/styles/fp_960_480/public/2020-09/how-to-become-software-engineer.jpg.webp?itok=uuamJN8l" class="static" style="max-width: 100%; height: auto; filter: blur(4px); filter: brightness(50%);">
+                <div class="container">
+                  <div class="carousel-caption text-end">
+                    <h1>Courses</h1>
+                    <p>The various subjects we currently provide resources for.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" style="background-color: #9acd32">Contact Us</a></p>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        
+        <!-------------------------------------- Start of tabs ---------------------------------->
+        <p>
+        </p>
+        <hr>
+
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    <!-- Featured blog post-->
+                    <div class="card mb-4">
+                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <div class="card-body">
+                            <div class="small text-muted">January 1, 2022</div>
+                            <h2 class="card-title">My Courses</h2>
+                            <p class="card-text"></p>
+                            <a class="btn btn-primary" href="#!">Read more →</a>
+                        </div>
+                    </div>
+                    <!-- Nested row for non-featured blog posts-->
+                    <!------------------------------------------------------------------------------------ Tab 1 ----------------------------------------------------------------------------------------------------------------->
+                    <div id="overview_tab1" class="tabcontent">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="card-body">
+                                        <div class="small text-muted">January 1, 2022</div>
+                                        <h2 class="card-title h4">Post Title</h2>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                    </div>
+                                </div>
+                                <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="card-body">
+                                        <div class="small text-muted">January 1, 2022</div>
+                                        <h2 class="card-title h4">Post Title</h2>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="card-body">
+                                        <div class="small text-muted">January 1, 2022</div>
+                                        <h2 class="card-title h4">Post Title</h2>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                    </div>
+                                </div>
+                                <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="card-body">
+                                        <div class="small text-muted">January 1, 2022</div>
+                                        <h2 class="card-title h4">Post Title</h2>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------------------------------------------------------------ Tab 1 ----------------------------------------------------------------------------------------------------------------->
+                    <div id="overview_tab2" class="tabcontent">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="card-body">
+                                        <div class="small text-muted">January 1, 2022</div>
+                                        <h2 class="card-title h4">Post Title</h2>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                    </div>
+                                </div>
+                                <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="card-body">
+                                        <div class="small text-muted">January 1, 2022</div>
+                                        <h2 class="card-title h4">Post Title</h2>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="card-body">
+                                        <div class="small text-muted">January 1, 2022</div>
+                                        <h2 class="card-title h4">Post Title</h2>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
+                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                    </div>
+                                </div>
+                                <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                    <div class="card-body">
+                                        <div class="small text-muted">January 1, 2022</div>
+                                        <h2 class="card-title h4">Post Title</h2>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
+                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pagination-->
+                    <nav aria-label="Pagination">
+                        <hr class="my-0" />
+                        <ul class="pagination justify-content-center my-4">
+                            <!-- <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li> -->
+                            <li class="tablinks page-item" onclick="changeTab(event, 'overview_tab1')">1</a></li>
+                            <li class="tablinks page-item" onclick="changeTab(event, 'overview_tab2')">2</a></li>
+                            <li class="tablinks page-item" onclick="changeTab(event, 'overview_tab3')">3</a></li>
+                            <!--
+                            <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
+                            <li class="page-item"><a class="page-link" href="#!">15</a></li>
+                            <li class="page-item"><a class="page-link" href="#!">Older</a></li>
+                            -->
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Search</div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                                <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Categories widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">Categories</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#!">Homework</a></li>
+                                        <li><a href="#!">Exams</a></li>
+                                        <li><a href="#!">Writing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0">
+                                        <li><a href="#!">Job Search</a></li>
+                                        <li><a href="#!">College</a></li>
+                                        <li><a href="#!">Research</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Side widget-->
+                    <div class="card mb-4">
+                        <div class="card-header">To Do List</div>
+                        <div class="card-body"><i>Your list is currently empty.</i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>&copy; 2022 HTMLites Inc. &middot;</p>
+      </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="../User/profile.js"></script>
+    
+  </body>
+</html>

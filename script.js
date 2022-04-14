@@ -1,6 +1,6 @@
 // Copied from previous file
 function cookieAlert(){
-    alert('You need cookies enabled in order to use this website!')
+    alert('You need cookies enabled in order to use this website! (testing 8.2)')
 }
 cookieAlert();
 
@@ -45,3 +45,4 @@ function readCookie(name) {
     return null;
 }
 ////////////////// WIP implementing global logged in/out
+
