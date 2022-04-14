@@ -21,7 +21,7 @@ function check_login(){
         for (i=0; i < users.length; i++){
             if (users[i].Username == username && users[i].Password == password){
                 createCookie('ISID', users[i].ISID, Date.UTC(2022, 8, 1));
-                window.location.href = 'Home/home.html';
+                window.location.href = 'User/profile.html';
             }
         }
         document.getElementById('incorrect').innerHTML = "Incorrect Password or Username";
