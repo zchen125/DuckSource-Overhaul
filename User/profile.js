@@ -22,7 +22,7 @@ axios.get('https://sheetdb.io/api/v1/0fjcjli9h840i')
 
             console.log(users[i]);
 
-            var uname = document.getElementsByTagName('info_username')[1];
+            var uname = document.getElementById('info')[1];
             celltext = document.createTextNode(users[i].Username)
             uname.appendChild(celltext);
 
