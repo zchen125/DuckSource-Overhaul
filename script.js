@@ -44,9 +44,4 @@ function readCookie(name) {
     }
     return null;
 }
-
 ////////////////// WIP implementing global logged in/out
-
-function loggedIn() {
-
-}
