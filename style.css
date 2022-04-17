@@ -257,43 +257,35 @@ h2 {
 */
 
 /* subject tabs */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
 
 .buttons {
-  background-color: #9acd32; 
-  border:#9acd32;
+  background-color: #98cc39; 
+  border:#98cc39;
+}
+.buttons2 {
+  background-color: #b4e45c; 
+  border:#b4e45c;
 }
 
-/* Links */
+/*
 a:link {
   color: #000000;
   text-decoration: none;
 }
 
-/* visited link */
 a:visited {
   color: #53b31f;
   text-decoration: none;
 }
 
-/* mouse over link */
 a:hover {
   color: #98cc39;
   text-decoration: none;
 }
 
-/* selected link */
+
 a:active {
   color: #98cc39;
   text-decoration: none;
 }
+*/
